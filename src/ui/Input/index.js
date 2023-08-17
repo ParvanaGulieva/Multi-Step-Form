@@ -1,14 +1,31 @@
 import React from "react";
 import StyledInput from "./style";
-import { toBeInTheDocument } from "@testing-library/jest-dom/matchers";
 
-const Input = ({ type, label, placeholder }) => {
+const Input = ({
+  type,
+  id,
+  label,
+  placeholder,
+  value,
+  onChange,
+  onBlur,
+  error,
+}) => {
   return (
     <StyledInput>
       <div className="label">
-        <label htmlFor={label}>{label}</label>
+        <label htmlFor={id}>{label}</label>
+        {error && <div className="error-message">{error}</div>}
       </div>
-      <input type={type} id={label} placeholder={placeholder} />
+      <input
+        type={type}
+        id={id}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
+        className={error ? "error" : ""}
+      />
     </StyledInput>
   );
 };

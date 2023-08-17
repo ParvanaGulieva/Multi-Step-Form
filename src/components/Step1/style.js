@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-const StyledStep1 = styled.div`
+const StyledStep1 = styled.form`
   margin-top: 4rem;
   width: 100%;
   display: flex;

@@ -45,7 +45,6 @@ const Layout = () => {
     }
   };
 
-  console.log(selectedAdds);
   return (
     <StyledLayout>
       <Navbar currentStep={currentStep} />

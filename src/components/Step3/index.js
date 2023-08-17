@@ -11,8 +11,6 @@ const Step3 = ({
   selectedAdds,
 }) => {
   const isAnySelected = selectedAdds.length > 0;
-
-  console.log(selectedAdds);
   return (
     <StyledStep3>
       <div className="main">
@@ -26,6 +24,7 @@ const Step3 = ({
             title="Online service"
             subtitle="Access to multiplayer games"
             isYearly={isYearly}
+            selectedAdds={selectedAdds}
             onSelectionChange={(addTitle, isSelected) =>
               handleAddSelection(addTitle, isSelected, 1)
             }
@@ -35,6 +34,7 @@ const Step3 = ({
             title="Larger storage"
             subtitle="Extra 1TB of cloud save"
             isYearly={isYearly}
+            selectedAdds={selectedAdds}
             onSelectionChange={(addTitle, isSelected) =>
               handleAddSelection(addTitle, isSelected, 2)
             }
@@ -44,6 +44,7 @@ const Step3 = ({
             title="Customizable Profile"
             subtitle="Custom theme on your profile"
             isYearly={isYearly}
+            selectedAdds={selectedAdds}
             onSelectionChange={(addTitle, isSelected) =>
               handleAddSelection(addTitle, isSelected, 2)
             }

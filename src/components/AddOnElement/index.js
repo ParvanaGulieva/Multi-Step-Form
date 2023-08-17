@@ -7,8 +7,12 @@ const AddOnElement = ({
   title,
   subtitle,
   onSelectionChange,
+  selectedAdds,
 }) => {
-  const [selectedAdd, setSelectedAdd] = useState(false);
+  const [selectedAdd, setSelectedAdd] = useState(
+    !!selectedAdds.find((el) => el.title === title)
+  );
+
   const handleAddSelection = () => {
     const newSelected = !selectedAdd;
     setSelectedAdd(newSelected);
@@ -18,7 +22,11 @@ const AddOnElement = ({
   return (
     <StyledAddOn className={selectedAdd ? "active" : ""}>
       <label className="checkboxContainer">
-        <input type="checkbox" onClick={handleAddSelection} />
+        <input
+          type="checkbox"
+          onClick={handleAddSelection}
+          defaultChecked={selectedAdd}
+        />
         <span className="checkmark"></span>
       </label>
 

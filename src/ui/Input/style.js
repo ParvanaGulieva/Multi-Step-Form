@@ -50,11 +50,19 @@ const StyledInput = styled.div`
   input:-webkit-autofill:hover,
   input:-webkit-autofill:focus,
   input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-box-shadow: 0 0 0 30px white inset;
   }
 
-  input:-webkit-autofill {
-    -webkit-text-fill-color: var(--color-denim) !important;
+  .error {
+    border: 1.5px solid var(--color-red-errors);
+  }
+
+  .error-message {
+    color: var(--color-red-errors);
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: normal;
   }
 `;
 

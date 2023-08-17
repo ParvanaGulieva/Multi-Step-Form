@@ -10,6 +10,16 @@ const Step4 = ({
   isYearly,
   selectedAdds,
 }) => {
+  const calculateTotalPrice = () => {
+    let totalPrice = isYearly ? selectedPlanPrice * 10 : selectedPlanPrice;
+
+    selectedAdds.forEach((add) => {
+      totalPrice += isYearly ? add.price * 10 : add.price;
+    });
+
+    return totalPrice;
+  };
+
   return (
     <StyledStep4>
       <div className="main">
@@ -50,7 +60,9 @@ const Step4 = ({
             <p className="totalPer">
               Total (per {isYearly ? "year" : "month"})
             </p>
-            <p className="totalPrice">+$12/{isYearly ? "yr" : "mo"}</p>
+            <p className="totalPrice">
+              +${calculateTotalPrice()}/{isYearly ? "yr" : "mo"}
+            </p>
           </div>
         </div>
       </div>
